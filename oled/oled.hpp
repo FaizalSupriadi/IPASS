@@ -27,9 +27,11 @@ public:
    
    /// send a command without data
    void command( ssd1306_commands c ){
+	  /// Put the given commands into array uint8_t data, with prefix uint8_t
       uint8_t data[] = { 
          ssd1306_cmd_prefix, (uint8_t) c 
       };
+	  /// Write to the ssd1306 the given commands
       bus.write( address ).write( 
          data, 
          sizeof( data ) / sizeof( uint8_t ) 
@@ -42,6 +44,7 @@ public:
          ssd1306_cmd_prefix, (uint8_t) c, 
          ssd1306_cmd_prefix, d0 
       };
+	  /// Write to the ssd1306 the given commands
       bus.write( address ).write( 
          data, 
          sizeof( data ) / sizeof( uint8_t ) 

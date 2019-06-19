@@ -998,6 +998,7 @@ Discarded input sections
  .group         0x0000000000000000        0x8 main.o
  .group         0x0000000000000000        0x8 main.o
  .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
  .text          0x0000000000000000        0x0 main.o
  .data          0x0000000000000000        0x0 main.o
  .bss           0x0000000000000000        0x0 main.o
@@ -1097,7 +1098,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 [!provide]                        PROVIDE (__ram_size, __ram_size)
                 [!provide]                        PROVIDE (__ram_end, __ram_end)
 
-.text           0x0000000000000000      0x26c
+.text           0x0000000000000000      0x294
                 0x0000000000000000                . = ALIGN (0x4)
                 0x0000000000000000                __text_start = .
                 [!provide]                        PROVIDE (__text_start, __text_start)
@@ -1130,66 +1131,70 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 0x00000000000000b8        0x2 main.o
                 0x00000000000000b8                due::pin_out::flush()
  *fill*         0x00000000000000ba        0x2 
+ .text._ZN3due7pin_outC2ENS_4pinsE
+                0x00000000000000bc       0x34 main.o
+                0x00000000000000bc                due::pin_out::pin_out(due::pins)
+                0x00000000000000bc                due::pin_out::pin_out(due::pins)
  .text.startup.main
-                0x00000000000000bc       0x6c main.o
-                0x00000000000000bc                main
+                0x00000000000000f0       0x60 main.o
+                0x00000000000000f0                main
  .text.__startup
-                0x0000000000000128       0x48 bmptk_cortex.o
-                0x0000000000000128                __startup
-                0x0000000000000170                . = ALIGN (0x4)
+                0x0000000000000150       0x48 bmptk_cortex.o
+                0x0000000000000150                __startup
+                0x0000000000000198                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x0000000000000170        0x0 linker stubs
- .glue_7t       0x0000000000000170        0x0 linker stubs
-                0x0000000000000170                . = ALIGN (0x4)
+ .glue_7        0x0000000000000198        0x0 linker stubs
+ .glue_7t       0x0000000000000198        0x0 linker stubs
+                0x0000000000000198                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZN3due8pin_infoENS_4pinsE.str1.1
-                0x0000000000000170       0x35 hwlib.o
+                0x0000000000000198       0x35 hwlib.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x00000000000001a5       0xa4 hwlib.o
- *fill*         0x0000000000000249        0x3 
+                0x00000000000001cd       0xa4 hwlib.o
+ *fill*         0x0000000000000271        0x3 
  .rodata._ZTVN3due6pin_inE
-                0x000000000000024c       0x10 main.o
-                0x000000000000024c                vtable for due::pin_in
+                0x0000000000000274       0x10 main.o
+                0x0000000000000274                vtable for due::pin_in
  .rodata._ZTVN3due7pin_outE
-                0x000000000000025c       0x10 main.o
-                0x000000000000025c                vtable for due::pin_out
-                0x000000000000026c                . = ALIGN (0x4)
+                0x0000000000000284       0x10 main.o
+                0x0000000000000284                vtable for due::pin_out
+                0x0000000000000294                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000000000026c                . = ALIGN (0x4)
+                0x0000000000000294                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x000000000000026c                . = ALIGN (0x4)
+                0x0000000000000294                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x000000000000026c                . = ALIGN (0x4)
+                0x0000000000000294                . = ALIGN (0x4)
  *(.eh_frame)
-                0x000000000000026c                . = ALIGN (0x4)
-                0x000000000000026c                __text_end = .
+                0x0000000000000294                . = ALIGN (0x4)
+                0x0000000000000294                __text_end = .
                 [!provide]                        PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x000000000000026c        0x0
- .vfp11_veneer  0x000000000000026c        0x0 linker stubs
+.vfp11_veneer   0x0000000000000294        0x0
+ .vfp11_veneer  0x0000000000000294        0x0 linker stubs
 
-.v4_bx          0x000000000000026c        0x0
- .v4_bx         0x000000000000026c        0x0 linker stubs
+.v4_bx          0x0000000000000294        0x0
+ .v4_bx         0x0000000000000294        0x0 linker stubs
 
-.iplt           0x000000000000026c        0x0
- .iplt          0x000000000000026c        0x0 hwlib.o
+.iplt           0x0000000000000294        0x0
+ .iplt          0x0000000000000294        0x0 hwlib.o
 
-.rel.dyn        0x000000000000026c        0x0
- .rel.iplt      0x000000000000026c        0x0 hwlib.o
+.rel.dyn        0x0000000000000294        0x0
+ .rel.iplt      0x0000000000000294        0x0 hwlib.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x000000000000026c                . = ALIGN (0x4)
-                0x000000000000026c                __exidx_start = .
+                0x0000000000000294                . = ALIGN (0x4)
+                0x0000000000000294                __exidx_start = .
                 [!provide]                        PROVIDE (__exidx_start, __exidx_start)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000000000000026c                . = ALIGN (0x4)
-                0x000000000000026c                __exidx_end = .
+                0x0000000000000294                . = ALIGN (0x4)
+                0x0000000000000294                __exidx_end = .
                 [!provide]                        PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x0000000020000000    0x12000
@@ -1217,9 +1222,9 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 0x0000000020012000                __bss_end = .
                 [!provide]                        PROVIDE (__bss_end, __bss_end)
 
-.data           0x0000000020012000        0x0 load address 0x000000000000026c
+.data           0x0000000020012000        0x0 load address 0x0000000000000294
                 0x0000000020012000                . = ALIGN (0x4)
-                0x000000000000026c                __data_init_start = LOADADDR (.data)
+                0x0000000000000294                __data_init_start = LOADADDR (.data)
                 [!provide]                        PROVIDE (__data_init_start, __data_init_start)
                 0x0000000020012000                __data_start = .
                 [!provide]                        PROVIDE (__data_start, __data_start)
@@ -1228,13 +1233,13 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 0x0000000020012000                . = ALIGN (0x4)
                 0x0000000020012000                __data_end = .
                 [!provide]                        PROVIDE (__data_end, __data_end)
-                0x000000000000026c                __data_init_end = LOADADDR (.data)
+                0x0000000000000294                __data_init_end = LOADADDR (.data)
                 [!provide]                        PROVIDE (__data_init_end, __data_init_end)
                 0x0000000000000000                PROVIDE (__data_size, (__data_end - __data_start))
                 0x0000000000000000                PROVIDE (__data_init_size, __data_size)
                 [!provide]                        PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x0000000020012000        0x0 load address 0x000000000000026c
+.igot.plt       0x0000000020012000        0x0 load address 0x0000000000000294
  .igot.plt      0x0000000020012000        0x0 hwlib.o
                 0x0000000020012000                . = ALIGN (0x4)
                 0x0000000020012000                __heap_start = .
