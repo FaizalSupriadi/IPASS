@@ -18,8 +18,8 @@ public:
 	/// \brief
 	/// Bool function.
 	/// \details
-	/// Return the tilt value as bool.
-	bool tilt_get(){
+	/// Return the tilt.read() value as bool.
+	bool get(){
 		return tilt.read();
 	}
 };

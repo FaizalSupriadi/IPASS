@@ -142,11 +142,10 @@ public:
 		 //    - keep other threads in a in a multi-threading context alive
          hwlib::wait_us( 0 );		 
       }  
-      //for( int y = 0; y < 64 / 8; y++ ){
-         auto t = bus.write( address );
-         t.write( ssd1306_data_prefix );
-         t.write( buffer, sizeof( buffer ) / sizeof( uint8_t )  );
-      //}   
+      auto t = bus.write( address );
+      t.write( ssd1306_data_prefix );
+      t.write( buffer, sizeof( buffer ) / sizeof( uint8_t )  );
+        
    }     
    
 }; // class glcd_oled_i2c_128x64_buffered

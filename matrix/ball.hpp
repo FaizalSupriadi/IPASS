@@ -8,7 +8,7 @@ protected:
  
 public:
 
-   circle( hwlib::window & w, const hwlib::xy & midpoint, int radius ):
+   circle( max7219 & w, const hwlib::xy & midpoint, int radius ):
       drawable( w, 
          midpoint - hwlib::xy( radius, radius ), 
          hwlib::xy( radius, radius ) * 2 ),
@@ -31,7 +31,7 @@ protected:
    
 public:
 
-   ball( hwlib::window & w,  const hwlib::xy & midpoint, 
+   ball( max7219 & w,  const hwlib::xy & midpoint, 
 		int radius, const hwlib::xy & speed, bool show_points=0 
    ):
       circle( w, midpoint, radius ),

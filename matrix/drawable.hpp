@@ -4,17 +4,17 @@
 #include <hwlib.hpp>
 #include "tilt.hpp"
 #include "rand.hpp"
-#include "oled.hpp"
+#include "maxLib.hpp"
 
 class drawable {
 protected:
 
-   hwlib::window & w;
+   max7219 & w;
    hwlib::xy location;
    hwlib::xy size;
    
 public:
-   drawable( hwlib::window & w, const hwlib::xy & location, const hwlib::xy & size ):
+   drawable( max7219 & w, const hwlib::xy & location, const hwlib::xy & size ):
       w( w ),
       location( location ),
       size( size )
@@ -74,14 +74,22 @@ private:
    
 public:
 
-   line( hwlib::window & w, const hwlib::xy & location, const hwlib::xy & end):
+   line( max7219 & w, const hwlib::xy & location, const hwlib::xy & end):
       drawable( w, location, end - location ),
       end( end )
    {}
    
    void draw() override {
-      hwlib::line x( location, end  );
-      x.draw( w );
+	  if( location.x == end.x ){
+	  	for( int i = location.y; i < end.y; i++ ){
+			w.setPixel( this->location.x, i, 1 );
+		}
+	  }else{
+		for( int i = location.x; i < end.x; i++ ){
+			w.setPixel( i, this->location.y, 1 );
+	 	 }
+	  }
+      w.render();
    }
 };
 
