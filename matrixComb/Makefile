@@ -12,7 +12,7 @@
 SOURCES :=
 
 # header files in this project
-HEADERS := maxScreen.hpp maxLib.hpp maxLibInit.hpp
+HEADERS := maxScreen.hpp maxLib.hpp maxLibInit.hpp drawable.hpp ball.hpp
 
 # other places to look for files for this project
 SEARCH  := 

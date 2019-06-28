@@ -25,7 +25,7 @@ public:
    virtual void update( tilt_sensor tilt){}
    bool overlaps( const drawable & other ); 
    virtual void interact( drawable & other ){}
-   virtual void interact( drawable & other, hwlib::xy place ){}
+   virtual void interact( drawable & other, hwlib::xy placeStart ){}
    
    hwlib::ostream & print( hwlib::ostream & out ) const {
       return out << location << " " << ( location + size );
@@ -40,12 +40,12 @@ bool within( int x, int a, int b ){
    return ( x >= a ) && ( x <= b );
 }
 
-bool drawable::overlaps( const drawable & other ){
-   
+bool drawable::overlaps( const drawable & other ){	
+   	
    bool x_overlap = within(
       location.x, 
       other.location.x, 
-      other.location.x + other.size.x
+      other.location.x + other.size.x 
    ) || within( 
       other.location.x, 
       location.x, 
@@ -61,7 +61,6 @@ bool drawable::overlaps( const drawable & other ){
       location.y, 
       location.y + size.y
    );
-   
    return x_overlap && y_overlap;
 }
 
@@ -69,9 +68,8 @@ bool drawable::overlaps( const drawable & other ){
 
 class line : public drawable {
 private:
-
    hwlib::xy end;
-   
+	
 public:
 
    line( max7219 & w, const hwlib::xy & location, const hwlib::xy & end):

@@ -12,7 +12,10 @@ int main( void ){
 	auto ds 	= target::pin_out( target::pins::d46 );
 	auto shcp 	= target::pin_out( target::pins::d47 );
 	auto stcp 	= target::pin_out( target::pins::d48 );
+	
 	auto sw		= target::pin_in ( target::pins::d2  );
+	
+	auto tilt	= target::pin_in ( target::pins::d7  );
 
 
 	
@@ -24,13 +27,12 @@ int main( void ){
 	int height_pix = ( 8 * screens.getHeight()  );
 	
 	hwlib::xy ballStart( 3, 3);
-	hwlib::xy ballEnd( 5, 5);
-	hwlib::xy ballSpeed( 2, 2);
+	hwlib::xy ballSpeed( 1, 1);
 	
 	line right( screens, hwlib::xy( 0, 0), hwlib::xy( 0, height_pix ) );
 	line left ( screens, hwlib::xy( 7, 0), hwlib::xy( 7,  height_pix ) );
-	line obstacle1( screens, hwlib::xy( 0, 18), hwlib::xy( 4, 18));
-	squareBall b( screens, ballStart, ballEnd, ballSpeed  ) ;
+	line obstacle1( screens, hwlib::xy( 0, 18), hwlib::xy( 3, 18));
+	squareBall b( screens, ballStart, ballSpeed  ) ;
 	
 	std::array< drawable *, 4 > objects = { &b, &left, &right, &obstacle1 };
 
@@ -46,15 +48,11 @@ int main( void ){
 	   
 		  	for( auto & p : objects ){
 				 for( auto & other : objects ){
-					p->interact( *other, ballStart, ballEnd );
+					p->interact( *other, ballStart );
 				 }
 			}
 		}
-		//screens.clear();
-		//screens.setPixel( 0, 0, 1);
-		//screens.setPixel( 1, 0, 1);
-		//screens.render();
-		//hwlib::wait_ms(200);
+		hwlib::wait_ms(300);
 		
 	}
 }
