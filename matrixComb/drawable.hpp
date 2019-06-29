@@ -22,10 +22,11 @@ public:
    
    virtual void draw() = 0;
    virtual void update(){}
-   virtual void update( tilt_sensor tilt){}
+   virtual void update( tilt_sensor tilt , hwlib::target::pin_in sw ){}
    bool overlaps( const drawable & other ); 
    virtual void interact( drawable & other ){}
    virtual void interact( drawable & other, hwlib::xy placeStart ){}
+   virtual void clearPix(){}	
    
    hwlib::ostream & print( hwlib::ostream & out ) const {
       return out << location << " " << ( location + size );
@@ -61,6 +62,8 @@ bool drawable::overlaps( const drawable & other ){
       location.y, 
       location.y + size.y
    );
+   //Find out which locations there are.
+   //hwlib::cout << location.x << " - "<<location.y << " - " << other.location.x <<  " - " << other.location.y << "\n"<< hwlib::flush;	
    return x_overlap && y_overlap;
 }
 
@@ -76,15 +79,15 @@ public:
       drawable( w, location, end - location ),
       end( end )
    {}
-   
+
    void draw() override {
 	  if( location.x == end.x ){
 	  	for( int i = location.y; i < end.y; i++ ){
-			w.setPixel( this->location.x, i, 1 );
+			w.setPixel( location.x, i, 1 );
 		}
 	  }else{
 		for( int i = location.x; i < end.x; i++ ){
-			w.setPixel( i, this->location.y, 1 );
+			w.setPixel( i, location.y, 1 );
 	 	 }
 	  }
       w.render();
