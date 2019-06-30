@@ -14,7 +14,7 @@ private:
 	bool lineRand=0;
 	
 public:
-	goal( max7219 & w, const hwlib::xy & location, const hwlib::xy & end, int points=0): 
+	goal( max7219 & w, const hwlib::xy & location, const hwlib::xy & end, int points=240): 
 		 drawable( w, location, end - location - hwlib::xy(1,1) ), 
 		 end( end ),
 		 locationM( location ),

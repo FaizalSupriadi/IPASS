@@ -19,18 +19,19 @@ public:
 			   
    void randLine( int obstType ){
 	    const int_fast16_t y  = random_in_range( 2, 30 );
-	   
+	   	const int_fast16_t x  = random_in_range( 3, 4 );
+
 	    if( obstType == 1){
 	    	location = hwlib::xy( 1, y );
 	    	end = hwlib::xy( 2, y );
 			
 		}else if ( obstType == 2 ){
-	    	location = hwlib::xy( 6, y );
-	    	end = hwlib::xy( 7, y );
+	    	location = hwlib::xy( x, y );
+	    	end = hwlib::xy( x+1, y );
 			
 		}else if ( obstType == 3){	
-	    	location = hwlib::xy( 4, y );
-	    	end = hwlib::xy( 5, y );
+	    	location = hwlib::xy( 6, y );
+	    	end = hwlib::xy( 7, y );
 			
 		}
    }

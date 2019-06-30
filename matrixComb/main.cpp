@@ -36,7 +36,8 @@ int main( void ){
 	ball b( screens, ballStart, ballSpeed  ) ;
 	goal g{ screens, hwlib::xy( 4, 28), hwlib::xy( 6, 30) };
 	
-	std::array< drawable *, 7 > objects = { &g, &b, &left, &right, &obstacleTop, &obstacleMid, &obstacleBot };
+	//Goal is not in the array, because we need the ball to not interact with the goal, but the goal with the ball
+	std::array< drawable *, 6 > objects = { &b, &left, &right, &obstacleTop, &obstacleMid, &obstacleBot };
 
 	for(;;){
 		//Button to refresh the screen by hand.
@@ -47,6 +48,8 @@ int main( void ){
 			for( auto & p : objects ){
         		 p->draw();
       		}
+			g.draw();
+			
 			//Update the ball with tilt and switch parameters.
 			b.update( tilt, sw2 );
 	   		
@@ -56,6 +59,8 @@ int main( void ){
 					p->interact( *other, ballStart );
 				 }
 			}
+			
+			g.interact( b, ballStart);
 			
 			//If pointShow is true, pointShow is true when the ball interacts with an object other than the goal.
 			if( b.pointShow() ){ 
@@ -67,10 +72,18 @@ int main( void ){
 				} 
 				
 				//Show points in rows.
-				for( int i = 0; i <= ( ( g.getPoints()-1 ) * 1 )/32; i++){
-					int tmp	= 32*i;
-					line points( screens, hwlib::xy( i, 0 ), hwlib::xy( i, g.getPoints()-tmp ) );
-					points.draw();
+				for( int i = 0; i <= ( g.getPoints()-1  )/32; i++){
+					if( i == ( g.getPoints()-1 ) / 32 ){
+						line points( screens, hwlib::xy( i, 0 ), hwlib::xy( i, g.getPoints()-(32*i)) );
+						points.draw();
+					}else if( g.getPoints() > 32 ){
+						line points( screens, hwlib::xy( i, 0 ), hwlib::xy( i, 32) );
+						points.draw();
+					}else{
+						line points( screens, hwlib::xy( i, 0 ), hwlib::xy( i, g.getPoints()) );
+						points.draw();
+					}
+					
 				}
 				
 				//Confirm when you're done watching your score.
@@ -99,7 +112,7 @@ int main( void ){
 			}
 			
 		}
-		hwlib::wait_ms(300);
+		hwlib::wait_ms(200);
 		
 	}
 }
