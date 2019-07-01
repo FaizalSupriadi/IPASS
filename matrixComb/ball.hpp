@@ -23,13 +23,12 @@ public:
 			}   
    		}
    }	
+	
    void interact( drawable & other, hwlib::xy placeStart ) override{
    	   	if( this != & other){
 			 if( overlaps( other )){
 				location = placeStart;
-				show_points=1;
-				 
-	    hwlib::cout << "TOUCH\n"<< hwlib::flush;
+				show_points=1;				 
 			 }
 		}
    }

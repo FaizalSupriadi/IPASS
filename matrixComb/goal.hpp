@@ -50,7 +50,7 @@ public:
 
 	void interact( drawable & other, hwlib::xy place ) override{
 		 const int_fast16_t y  = random_in_range( 4, 28 );
-		 const int_fast16_t x  = random_in_range( 3, 5 );
+		 const int_fast16_t x  = random_in_range( 1, 5 );
 		 if( this != & other){
 			if( overlaps( other )){
 				location = hwlib::xy( x, y );

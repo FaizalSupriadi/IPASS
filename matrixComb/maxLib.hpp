@@ -1,10 +1,10 @@
 #ifndef MAXLIB_HPP
 #define MAXLIB_HPP
-#include "maxLibInit.hpp"
+#include "maxLibCommand.hpp"
 #include "maxScreen.hpp"
 #include "hwlib.hpp"
 ///@file
-screen screenM[ MATRIX_AMOUNT ]; // Outside of the class, because it didn't work inside private nor public.
+screen screenM[ MATRIX_AMOUNT ]; // Outside of the class, because it doesn't work inside private or public.
 class max7219{
 private:
 	hwlib::spi_bus & bus;
