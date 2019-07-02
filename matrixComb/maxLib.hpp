@@ -26,7 +26,7 @@ screen screenM[ MATRIX_AMOUNT ];
 /// An instance of this class creates an array of Screen objects to store data.
 /// You can then use the max7219 object as a window to draw on.
 //
-/// Data is altered wth the Cleara function ( set all data to 0 ) or the setPixel function ( alter single pixel with X and Y values ).
+/// Data is altered wth the Clear function ( set all data to 0 ) or the setPixel function ( alter single pixel with X and Y values ).
 /// After altering, the data is drawn on the displays with render().
 //
 /// Also has properties to request width & heigth with getHeight() and getWidth().s
@@ -57,7 +57,7 @@ public:
 			screenM[i] = screen();
 		}
 	}
-	///Function to clear all screen data to bits of 0.
+	/// Function to clear all screen data to bits of 0.
 	//
 	/// Initial values are set here. Also used to clear the screen data with all 0 bits.
 	/// Data is stored in tmp[2] array of 2 uint8_t( Bytes ).
@@ -84,7 +84,7 @@ public:
 		tmp[1] = MAX7219_REG_NO_OP;
 		bus.transaction( sel ).write_and_read( 2, tmp, nullptr );
 		
-		// alter addresses 0x01 to 0x08, all off.
+		// Alter addresses 0x01 to 0x08, all off.
 		for( unsigned int i=0; i<8; i++ ){
 			tmp[0] = ( uint8_t )( i + 1 );
 			tmp[1] = 0x00;
@@ -94,7 +94,7 @@ public:
 	
 	/// Transfer all data to chip to draw pixels.
 	//
-	/// Use this function after drawing with setPixel/setRow/clear to render  the changes to the display
+	/// Use this function after drawing to render the changes to the display.
 	/// Data array of 2 bytes are created, an address and value.
 	/// The array is then pushed to the bus and drawn on display.
 	void render(){
@@ -126,6 +126,7 @@ public:
 	//
 	/// Return the height.
 	int getHeight(){ return height; }
+	
 	/// Width of matrices.
 	//
 	/// Return the width.

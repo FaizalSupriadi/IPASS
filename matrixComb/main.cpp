@@ -3,7 +3,7 @@
 #include <array>
 
 int main( void ){	 
-	int width=4, height=4;
+	int width=1, height=4;
 	
 	namespace target = hwlib::target;
 	
@@ -14,7 +14,7 @@ int main( void ){
 	auto led2	= target::pin_out( target::pins::d4 );
 	
 	auto sw2	= target::pin_in ( target::pins::d5  );
-	auto sw		= target::pin_in ( target::pins::d6  );
+	auto sw1	= target::pin_in ( target::pins::d6  );
 	
 	auto tilt	= target::pin_in ( target::pins::d7  );
 	
@@ -43,7 +43,7 @@ int main( void ){
 
 	for(;;){
 		//Button to clear the screen by hand.
-		if( !sw.read() ){
+		if( !sw1.read() ){
 			screens.clear();
 		}else{
 			//Draw all objects in the array.
@@ -78,23 +78,26 @@ int main( void ){
 				} 
 				
 				//Show points in rows.
-				for( int i = 0; i <= ( g.getPoints()-1  )/32; i++){
-					if( i == ( g.getPoints()-1 ) / 32 ){
-						line points( screens, hwlib::xy( i, 0 ), hwlib::xy( i, g.getPoints()-(32*i)) );
-						points.draw();
-					}else if( g.getPoints() > 32 ){
-						line points( screens, hwlib::xy( i, 0 ), hwlib::xy( i, 32) );
-						points.draw();
-					}else{
-						line points( screens, hwlib::xy( i, 0 ), hwlib::xy( i, g.getPoints()) );
-						points.draw();
+					for( int i = 0; i <= ( g.getPoints()-1  )/32; i++){			
+						// If g.getPoints is smaller than 33, draw that number,
+						// otherwise draw a full row for each multiplication of 32, 
+						// then if there are leftover numbers, draw that too.
+						// If g.getPoints is bigger than 256, it will only show 256 points.
+						
+						if (i > 7 ){
+							break;
+						}
+						if( i == ( g.getPoints()-1 ) / 32 ){
+							line points( screens, hwlib::xy( i, 0 ), hwlib::xy( i, g.getPoints()-(32*i)) );
+							points.draw();
+						}else if( g.getPoints() > 32 ){
+							line points( screens, hwlib::xy( i, 0 ), hwlib::xy( i, 32) );
+							points.draw();
+						}
 					}
-					
-				}
 				
-				//Confirm when you're done watching your score.
-				while( sw2.read() ){
-				}
+				//Confirm when you're done watching your score with switch 1.
+				while( sw1.read() ){}
 				
 				//Reset screen.
 				for( int i = 0; i < 8; i++ ){
@@ -102,6 +105,7 @@ int main( void ){
 						screens.setPixel( i, j, 0 );	
 					}   
 				}
+				
 				//reset score/objects.
 				g.resetPoints();
 				g.resetObj();

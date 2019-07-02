@@ -3,6 +3,7 @@
 
 #include "hwlib.hpp"
 
+// The seed
 uint_fast32_t random(){ 
    static uint_fast32_t n = 0;
    n = n * 214013L + 2531011L; 

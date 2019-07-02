@@ -1087,7 +1087,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 [!provide]                        PROVIDE (__ram_size, __ram_size)
                 [!provide]                        PROVIDE (__ram_end, __ram_end)
 
-.text           0x0000000000000000     0x1114
+.text           0x0000000000000000     0x1124
                 0x0000000000000000                . = ALIGN (0x4)
                 0x0000000000000000                __text_start = .
                 [!provide]                        PROVIDE (__text_start, __text_start)
@@ -1249,96 +1249,96 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 0x00000000000007e0                line::line(max7219&, hwlib::xy const&, hwlib::xy const&)
                 0x00000000000007e0                line::line(max7219&, hwlib::xy const&, hwlib::xy const&)
  .text.startup.main
-                0x000000000000081c      0x3e8 main.o
+                0x000000000000081c      0x3f8 main.o
                 0x000000000000081c                main
  .text.__startup
-                0x0000000000000c04       0x48 bmptk_cortex.o
-                0x0000000000000c04                __startup
- .text          0x0000000000000c4c       0x30 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_aeabi_uldivmod.o)
-                0x0000000000000c4c                __aeabi_uldivmod
- .text          0x0000000000000c7c      0x2dc /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_udivmoddi4.o)
-                0x0000000000000c7c                __udivmoddi4
- .text          0x0000000000000f58        0x4 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_dvmd_tls.o)
-                0x0000000000000f58                __aeabi_ldiv0
-                0x0000000000000f5c                . = ALIGN (0x4)
+                0x0000000000000c14       0x48 bmptk_cortex.o
+                0x0000000000000c14                __startup
+ .text          0x0000000000000c5c       0x30 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_aeabi_uldivmod.o)
+                0x0000000000000c5c                __aeabi_uldivmod
+ .text          0x0000000000000c8c      0x2dc /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_udivmoddi4.o)
+                0x0000000000000c8c                __udivmoddi4
+ .text          0x0000000000000f68        0x4 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_dvmd_tls.o)
+                0x0000000000000f68                __aeabi_ldiv0
+                0x0000000000000f6c                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x0000000000000f5c        0x0 linker stubs
- .glue_7t       0x0000000000000f5c        0x0 linker stubs
-                0x0000000000000f5c                . = ALIGN (0x4)
+ .glue_7        0x0000000000000f6c        0x0 linker stubs
+ .glue_7t       0x0000000000000f6c        0x0 linker stubs
+                0x0000000000000f6c                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZTVN5hwlib14pin_in_dummy_tE
-                0x0000000000000f5c       0x10 hwlib.o
-                0x0000000000000f5c                vtable for hwlib::pin_in_dummy_t
- .rodata._ZTVN5hwlib20pin_direct_from_in_tE
                 0x0000000000000f6c       0x10 hwlib.o
-                0x0000000000000f6c                vtable for hwlib::pin_direct_from_in_t
- .rodata._ZTVN5hwlib21pin_direct_from_out_tE
+                0x0000000000000f6c                vtable for hwlib::pin_in_dummy_t
+ .rodata._ZTVN5hwlib20pin_direct_from_in_tE
                 0x0000000000000f7c       0x10 hwlib.o
-                0x0000000000000f7c                vtable for hwlib::pin_direct_from_out_t
+                0x0000000000000f7c                vtable for hwlib::pin_direct_from_in_t
+ .rodata._ZTVN5hwlib21pin_direct_from_out_tE
+                0x0000000000000f8c       0x10 hwlib.o
+                0x0000000000000f8c                vtable for hwlib::pin_direct_from_out_t
  .rodata._ZN3due8pin_infoENS_4pinsE.str1.1
-                0x0000000000000f8c       0x35 hwlib.o
+                0x0000000000000f9c       0x35 hwlib.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x0000000000000fc1       0xa4 hwlib.o
- *fill*         0x0000000000001065        0x3 
+                0x0000000000000fd1       0xa4 hwlib.o
+ *fill*         0x0000000000001075        0x3 
  .rodata._ZTVN5hwlib33spi_bus_bit_banged_sclk_mosi_misoE
-                0x0000000000001068        0xc main.o
-                0x0000000000001068                vtable for hwlib::spi_bus_bit_banged_sclk_mosi_miso
+                0x0000000000001078        0xc main.o
+                0x0000000000001078                vtable for hwlib::spi_bus_bit_banged_sclk_mosi_miso
  .rodata._ZTVN3due6pin_inE
-                0x0000000000001074       0x10 main.o
-                0x0000000000001074                vtable for due::pin_in
- .rodata._ZTVN3due7pin_outE
                 0x0000000000001084       0x10 main.o
-                0x0000000000001084                vtable for due::pin_out
+                0x0000000000001084                vtable for due::pin_in
+ .rodata._ZTVN3due7pin_outE
+                0x0000000000001094       0x10 main.o
+                0x0000000000001094                vtable for due::pin_out
  .rodata._ZTV4line
-                0x0000000000001094       0x20 main.o
-                0x0000000000001094                vtable for line
+                0x00000000000010a4       0x20 main.o
+                0x00000000000010a4                vtable for line
  .rodata._ZTV4ball
-                0x00000000000010b4       0x20 main.o
-                0x00000000000010b4                vtable for ball
+                0x00000000000010c4       0x20 main.o
+                0x00000000000010c4                vtable for ball
  .rodata._ZTV4goal
-                0x00000000000010d4       0x20 main.o
-                0x00000000000010d4                vtable for goal
+                0x00000000000010e4       0x20 main.o
+                0x00000000000010e4                vtable for goal
  .rodata._ZTV8obstacle
-                0x00000000000010f4       0x20 main.o
-                0x00000000000010f4                vtable for obstacle
-                0x0000000000001114                . = ALIGN (0x4)
+                0x0000000000001104       0x20 main.o
+                0x0000000000001104                vtable for obstacle
+                0x0000000000001124                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000000001114                . = ALIGN (0x4)
+                0x0000000000001124                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x0000000000001114                . = ALIGN (0x4)
+                0x0000000000001124                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x0000000000001114                . = ALIGN (0x4)
+                0x0000000000001124                . = ALIGN (0x4)
  *(.eh_frame)
-                0x0000000000001114                . = ALIGN (0x4)
-                0x0000000000001114                __text_end = .
+                0x0000000000001124                . = ALIGN (0x4)
+                0x0000000000001124                __text_end = .
                 [!provide]                        PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x0000000000001114        0x0
- .vfp11_veneer  0x0000000000001114        0x0 linker stubs
+.vfp11_veneer   0x0000000000001124        0x0
+ .vfp11_veneer  0x0000000000001124        0x0 linker stubs
 
-.v4_bx          0x0000000000001114        0x0
- .v4_bx         0x0000000000001114        0x0 linker stubs
+.v4_bx          0x0000000000001124        0x0
+ .v4_bx         0x0000000000001124        0x0 linker stubs
 
-.iplt           0x0000000000001114        0x0
- .iplt          0x0000000000001114        0x0 hwlib.o
+.iplt           0x0000000000001124        0x0
+ .iplt          0x0000000000001124        0x0 hwlib.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x0000000000001114                . = ALIGN (0x4)
-                0x0000000000001114                __exidx_start = .
+                0x0000000000001124                . = ALIGN (0x4)
+                0x0000000000001124                __exidx_start = .
                 [!provide]                        PROVIDE (__exidx_start, __exidx_start)
 
-.ARM.exidx      0x0000000000001114        0x8
+.ARM.exidx      0x0000000000001124        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x0000000000001114        0x8 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x0000000000001124        0x8 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_udivmoddi4.o)
 
-.rel.dyn        0x000000000000111c        0x0
- .rel.iplt      0x000000000000111c        0x0 hwlib.o
-                0x000000000000111c                . = ALIGN (0x4)
-                0x000000000000111c                __exidx_end = .
+.rel.dyn        0x000000000000112c        0x0
+ .rel.iplt      0x000000000000112c        0x0 hwlib.o
+                0x000000000000112c                . = ALIGN (0x4)
+                0x000000000000112c                __exidx_end = .
                 [!provide]                        PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x0000000020000000    0x12034
@@ -1377,9 +1377,9 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 0x0000000020012034                __bss_end = .
                 [!provide]                        PROVIDE (__bss_end, __bss_end)
 
-.data           0x0000000020012034        0x8 load address 0x000000000000111c
+.data           0x0000000020012034        0x8 load address 0x000000000000112c
                 0x0000000020012034                . = ALIGN (0x4)
-                0x000000000000111c                __data_init_start = LOADADDR (.data)
+                0x000000000000112c                __data_init_start = LOADADDR (.data)
                 [!provide]                        PROVIDE (__data_init_start, __data_init_start)
                 0x0000000020012034                __data_start = .
                 [!provide]                        PROVIDE (__data_start, __data_start)
@@ -1394,13 +1394,13 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 0x000000002001203c                . = ALIGN (0x4)
                 0x000000002001203c                __data_end = .
                 [!provide]                        PROVIDE (__data_end, __data_end)
-                0x000000000000111c                __data_init_end = LOADADDR (.data)
+                0x000000000000112c                __data_init_end = LOADADDR (.data)
                 [!provide]                        PROVIDE (__data_init_end, __data_init_end)
                 0x0000000000000008                PROVIDE (__data_size, (__data_end - __data_start))
                 0x0000000000000008                PROVIDE (__data_init_size, __data_size)
                 [!provide]                        PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x000000002001203c        0x0 load address 0x0000000000001124
+.igot.plt       0x000000002001203c        0x0 load address 0x0000000000001134
  .igot.plt      0x000000002001203c        0x0 hwlib.o
                 0x000000002001203c                . = ALIGN (0x4)
                 0x000000002001203c                __heap_start = .

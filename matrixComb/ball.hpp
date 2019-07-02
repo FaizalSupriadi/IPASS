@@ -17,7 +17,7 @@ public:
       speed( speed ),
 	  show_points( show_points )
    {}
-	
+	// Set the leds in row 1 - 6 off
    void clearPix() override{
    		for( int i = 1; i < 7; i++ ){
 			for( int j = 0; j < 32; j++ ){
