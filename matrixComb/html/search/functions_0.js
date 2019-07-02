@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['get',['get',['../classtilt__sensor.html#a957a372539d10280ba24b1fe3fc04fef',1,'tilt_sensor']]]
+  ['clear',['clear',['../classmax7219.html#a285fdbbb7c29dcaa10634ac6756d7b49',1,'max7219']]]
 ];

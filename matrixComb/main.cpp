@@ -10,6 +10,8 @@ int main( void ){
 	auto ds 	= target::pin_out( target::pins::d46 );
 	auto shcp 	= target::pin_out( target::pins::d47 );
 	auto stcp 	= target::pin_out( target::pins::d48 );
+	auto led1	= target::pin_out( target::pins::d3 );
+	auto led2	= target::pin_out( target::pins::d4 );
 	
 	auto sw2	= target::pin_in ( target::pins::d5  );
 	auto sw		= target::pin_in ( target::pins::d6  );
@@ -40,7 +42,7 @@ int main( void ){
 	std::array< drawable *, 6 > objects = { &b, &left, &right, &obstacleTop, &obstacleMid, &obstacleBot };
 
 	for(;;){
-		//Button to refresh the screen by hand.
+		//Button to clear the screen by hand.
 		if( !sw.read() ){
 			screens.clear();
 		}else{
@@ -52,7 +54,11 @@ int main( void ){
 			
 			//Update the ball with tilt and switch parameters.
 			b.update( tilt, sw2 );
-	   		
+			
+			//Left or right light
+			led1.write( tilt.read() );
+	   		led2.write( !tilt.read() );
+			
 			//If the ball interacts with an object it resets, unless it's the goal.
 		  	for( auto & p : objects ){
 				 for( auto & other : objects ){

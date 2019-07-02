@@ -1,14 +1,25 @@
+// ==========================================================================
+//
+// File      : maxLibCommand.hpp
+// Part of   : IPASS Max7219 Library
+// Copyright : Faizal.faizalrachmansupriadi@student.hu.nl 2019
+//
+// Distributed under the Boost Software License, Version 1.0.
+// (See accompanying file LICENSE_1_0.txt or copy at 
+// http://www.boost.org/LICENSE_1_0.txt)
+//
+// ==========================================================================
+///@file
 #ifndef MAXLIBINIT_HPP
 #define MAXLIBINIT_HPP
 #include <stdint.h>
-///@file
 
-///NO-OP register addres: If this is send as an address, the matrix this is sent to changes nothing,
-///diregarding the data sent to the same chip.
+/// NO-OP register addres: If this is send as an address, the matrix this is sent to changes nothing,
+/// diregarding the data sent to the same chip.
 
 constexpr uint8_t MAX7219_REG_NO_OP 			= 0x00;
 
-///The decode register address: Sets the decode mode.
+/// The decode register address: Sets the decode mode.
 constexpr uint8_t MAX7219_REG_DECODE			= 0x09;
 constexpr uint8_t MAX7219_REG_BRIGHTNESS		= 0x0A;
 constexpr uint8_t MAX7219_REG_SCAN_LIMIT		= 0x0B;
@@ -24,18 +35,18 @@ constexpr uint8_t MAX7219_COLUMN6				= 0x06;
 constexpr uint8_t MAX7219_COLUMN7				= 0x07;
 constexpr uint8_t MAX7219_COLUMN8				= 0x08;
 	
-///Multi-purpose data: Send no data to a column, can be used for a NO-OP on certain.
+/// Multi-purpose data: Send no data to a column, can be used for a NO-OP on certain.
 constexpr uint8_t MAX7219_NO_OP_DATA			= 0x00;
-///The ammount of columns that can be adressed: 1 to 8 (0x00 to 0x007).
+/// The ammount of columns that can be adressed: 1 to 8 (0x00 to 0x007).
 constexpr uint8_t MAX7219_SCAN_LIMIT			= 0x07;
-///Enable shutdown mode and display test.
+/// Enable shutdown mode and display test.
 constexpr uint8_t MAX7219_NORMAL_OPERATION		= 0x01;
-///Brightness of LEDs (0x01 to 0x1F).
+/// Brightness of LEDs (0x01 to 0x1F).
 constexpr uint8_t BRIGHTNESS_LVL				= 0x05;
 
-///The amount of matrices.
+/// The amount of matrices.
 constexpr uint8_t MATRIX_AMOUNT					= 4;
-///The size of the matrices.
+/// The size of the matrices.
 constexpr uint8_t MATRIX_SIZE					= ( MATRIX_AMOUNT+MATRIX_AMOUNT );
 
 constexpr uint8_t PIXELBUFFER					= 0x0;

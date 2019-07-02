@@ -1,7 +1,18 @@
+// ==========================================================================
+//
+// File      : maxLibCommand.hpp
+// Part of   : IPASS Max7219 Library
+// Copyright : Faizal.faizalrachmansupriadi@student.hu.nl 2019
+//
+// Distributed under the Boost Software License, Version 1.0.
+// (See accompanying file LICENSE_1_0.txt or copy at 
+// http://www.boost.org/LICENSE_1_0.txt)
+//
+// ==========================================================================
+///@file
 #ifndef MAXLIBINIT_HPP
 #define MAXLIBINIT_HPP
 #include <stdint.h>
-///@file
 
 /// NO-OP register addres: If this is send as an address, the matrix this is sent to changes nothing,
 /// diregarding the data sent to the same chip.

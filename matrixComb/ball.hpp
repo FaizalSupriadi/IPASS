@@ -1,6 +1,8 @@
+
 #ifndef BALL_HPP
 #define BALL_HPP
 #include "drawable.hpp"
+
 class ball : public drawable {
 protected:
    	

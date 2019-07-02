@@ -65,35 +65,258 @@ $(function() {
 <div class="title">max7219 Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class that creates a display out of 4 <a class="el" href="classmax7219.html" title="Class that creates a display out of 4 max7219 led matrices. ">max7219</a> led matrices.  
+ <a href="classmax7219.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="max_lib_8hpp_source.html">maxLib.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6ff77cc7ff607aa9d0e14cd1c82b70c6"><td class="memItemLeft" align="right" valign="top"><a id="a6ff77cc7ff607aa9d0e14cd1c82b70c6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>max7219</b> (hwlib::spi_bus &amp;bus, hwlib::pin_out &amp;sel, int width, int height)</td></tr>
+<tr class="memitem:a6ff77cc7ff607aa9d0e14cd1c82b70c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmax7219.html#a6ff77cc7ff607aa9d0e14cd1c82b70c6">max7219</a> (hwlib::spi_bus &amp;bus, hwlib::pin_out &amp;sel, int width, int height)</td></tr>
+<tr class="memdesc:a6ff77cc7ff607aa9d0e14cd1c82b70c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor method.  <a href="#a6ff77cc7ff607aa9d0e14cd1c82b70c6">More...</a><br /></td></tr>
 <tr class="separator:a6ff77cc7ff607aa9d0e14cd1c82b70c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a285fdbbb7c29dcaa10634ac6756d7b49"><td class="memItemLeft" align="right" valign="top"><a id="a285fdbbb7c29dcaa10634ac6756d7b49"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memitem:a285fdbbb7c29dcaa10634ac6756d7b49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmax7219.html#a285fdbbb7c29dcaa10634ac6756d7b49">clear</a> ()</td></tr>
+<tr class="memdesc:a285fdbbb7c29dcaa10634ac6756d7b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to clear all screen data to bits of 0.  <a href="#a285fdbbb7c29dcaa10634ac6756d7b49">More...</a><br /></td></tr>
 <tr class="separator:a285fdbbb7c29dcaa10634ac6756d7b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a878e515e5c2b3dc2e5e8a849cd328a21"><td class="memItemLeft" align="right" valign="top"><a id="a878e515e5c2b3dc2e5e8a849cd328a21"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> ()</td></tr>
+<tr class="memitem:a878e515e5c2b3dc2e5e8a849cd328a21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmax7219.html#a878e515e5c2b3dc2e5e8a849cd328a21">render</a> ()</td></tr>
+<tr class="memdesc:a878e515e5c2b3dc2e5e8a849cd328a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfer all data to chip to draw pixels.  <a href="#a878e515e5c2b3dc2e5e8a849cd328a21">More...</a><br /></td></tr>
 <tr class="separator:a878e515e5c2b3dc2e5e8a849cd328a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e4aa8eb81e73d65de5490898abee53f"><td class="memItemLeft" align="right" valign="top"><a id="a1e4aa8eb81e73d65de5490898abee53f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPixel</b> (int x, int y, bool state)</td></tr>
+<tr class="memitem:a1e4aa8eb81e73d65de5490898abee53f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmax7219.html#a1e4aa8eb81e73d65de5490898abee53f">setPixel</a> (int x, int y, bool state)</td></tr>
+<tr class="memdesc:a1e4aa8eb81e73d65de5490898abee53f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to alter a single pixel on the display.  <a href="#a1e4aa8eb81e73d65de5490898abee53f">More...</a><br /></td></tr>
 <tr class="separator:a1e4aa8eb81e73d65de5490898abee53f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad44fade192598c4c5cb1b8521d42b325"><td class="memItemLeft" align="right" valign="top"><a id="ad44fade192598c4c5cb1b8521d42b325"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getHeight</b> ()</td></tr>
+<tr class="memitem:ad44fade192598c4c5cb1b8521d42b325"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmax7219.html#ad44fade192598c4c5cb1b8521d42b325">getHeight</a> ()</td></tr>
+<tr class="memdesc:ad44fade192598c4c5cb1b8521d42b325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height value of matrices.  <a href="#ad44fade192598c4c5cb1b8521d42b325">More...</a><br /></td></tr>
 <tr class="separator:ad44fade192598c4c5cb1b8521d42b325"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6abe3b1c33d6ee41cb33d86cc66d08d"><td class="memItemLeft" align="right" valign="top"><a id="af6abe3b1c33d6ee41cb33d86cc66d08d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getWidth</b> ()</td></tr>
+<tr class="memitem:af6abe3b1c33d6ee41cb33d86cc66d08d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmax7219.html#af6abe3b1c33d6ee41cb33d86cc66d08d">getWidth</a> ()</td></tr>
+<tr class="memdesc:af6abe3b1c33d6ee41cb33d86cc66d08d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of matrices.  <a href="#af6abe3b1c33d6ee41cb33d86cc66d08d">More...</a><br /></td></tr>
 <tr class="separator:af6abe3b1c33d6ee41cb33d86cc66d08d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that creates a display out of 4 <a class="el" href="classmax7219.html" title="Class that creates a display out of 4 max7219 led matrices. ">max7219</a> led matrices. </p>
+<p>This class controls multiple Max7219 led matrices to make them function as a single display. An instance of this class creates an array of Screen objects to store data. You can then use the <a class="el" href="classmax7219.html" title="Class that creates a display out of 4 max7219 led matrices. ">max7219</a> object as a window to draw on. Data is altered wth the Cleara function ( set all data to 0 ) or the setPixel function ( alter single pixel with X and Y values ). After altering, the data is drawn on the displays with <a class="el" href="classmax7219.html#a878e515e5c2b3dc2e5e8a849cd328a21" title="Transfer all data to chip to draw pixels. ">render()</a>. Also has properties to request width &amp; heigth with <a class="el" href="classmax7219.html#ad44fade192598c4c5cb1b8521d42b325" title="Height value of matrices. ">getHeight()</a> and <a class="el" href="classmax7219.html#af6abe3b1c33d6ee41cb33d86cc66d08d" title="Width of matrices. ">getWidth()</a>.s </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6ff77cc7ff607aa9d0e14cd1c82b70c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff77cc7ff607aa9d0e14cd1c82b70c6">&#9670;&nbsp;</a></span>max7219()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">max7219::max7219 </td>
+          <td>(</td>
+          <td class="paramtype">hwlib::spi_bus &amp;&#160;</td>
+          <td class="paramname"><em>bus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">hwlib::pin_out &amp;&#160;</td>
+          <td class="paramname"><em>sel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor method. </p>
+<p>Constructor method for the Max7219 display object, which needs:</p><ul>
+<li>SPI bus with parameters for &lt;CLOCKPIN&gt; and &lt;DATAPIN&gt;/</li>
+<li>Latch pin.</li>
+<li>Amount of screens in width.</li>
+<li>Amount of screens in height. </li>
+</ul>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a285fdbbb7c29dcaa10634ac6756d7b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a285fdbbb7c29dcaa10634ac6756d7b49">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void max7219::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function to clear all screen data to bits of 0. </p>
+<p>Initial values are set here. Also used to clear the screen data with all 0 bits. Data is stored in tmp[2] array of 2 uint8_t( Bytes ). First byte is for address. Second byte is for data. In <a class="el" href="max_lib_command_8hpp.html">maxLibCommand.hpp</a> you can see what addresses or values are used. </p>
+
+</div>
+</div>
+<a id="ad44fade192598c4c5cb1b8521d42b325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad44fade192598c4c5cb1b8521d42b325">&#9670;&nbsp;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int max7219::getHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Height value of matrices. </p>
+<p>Return the height. </p>
+
+</div>
+</div>
+<a id="af6abe3b1c33d6ee41cb33d86cc66d08d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6abe3b1c33d6ee41cb33d86cc66d08d">&#9670;&nbsp;</a></span>getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int max7219::getWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Width of matrices. </p>
+<p>Return the width. </p>
+
+</div>
+</div>
+<a id="a878e515e5c2b3dc2e5e8a849cd328a21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a878e515e5c2b3dc2e5e8a849cd328a21">&#9670;&nbsp;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void max7219::render </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transfer all data to chip to draw pixels. </p>
+<p>Use this function after drawing with setPixel/setRow/clear to render the changes to the display Data array of 2 bytes are created, an address and value. The array is then pushed to the bus and drawn on display. </p>
+
+</div>
+</div>
+<a id="a1e4aa8eb81e73d65de5490898abee53f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e4aa8eb81e73d65de5490898abee53f">&#9670;&nbsp;</a></span>setPixel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void max7219::setPixel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function to alter a single pixel on the display. </p>
+<p>This function asks X and Y values to change the corrseponding pixel on the display to a 1 or 0 ( true or false ). The right display to draw on is automatically selected. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="max_lib_8hpp_source.html">maxLib.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 1 2019 15:55:02 for &lt;project name&gt; by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 2 2019 14:00:50 for &lt;project name&gt; by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
