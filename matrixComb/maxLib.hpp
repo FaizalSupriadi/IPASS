@@ -69,7 +69,7 @@ public:
 		bus.transaction( sel ).write_and_read( 2, tmp, nullptr );
 		
 		tmp[0] = MAX7219_REG_BRIGHTNESS; 										// Brightness 3.
-		tmp[1] = MAX7219_REG_DISPLAYTESTT;
+		tmp[1] = MAX7219_REG_DISPLAYTEST;
 		bus.transaction( sel ).write_and_read( 2, tmp, nullptr );
 		
 		tmp[0] = MAX7219_REG_SCAN_LIMIT; 										// Scan limit -- use rows 0 to 7.

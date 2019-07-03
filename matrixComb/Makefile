@@ -9,7 +9,7 @@
 #############################################################################
 
 # source files in this project (main.cpp is automatically assumed)
-SOURCES :=
+SOURCES := 
 
 # header files in this project
 HEADERS := maxScreen.hpp maxLib.hpp maxLibCommand.hpp drawable.hpp ball.hpp goal.hpp obstacle.hpp applicationAll.hpp
