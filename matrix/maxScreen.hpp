@@ -58,7 +58,6 @@ public:
 	/// This function allows a single led to be toggled on or off by sending x and y coordinates and a value.
 	/// Only the concerning bit is changed, the rest of the data stays the same.
 	void setPixel( int x, int y, bool data ){
-		
 		// First the data is inverted, then it is XOR-ed by row[x], afterwards 1 is shifted to the left by int y,
 		// after all that the first bit manipulation and the second are AND-ed together, which then gives row[X] an XOR-ed version of it.
 		row[x] ^= (-data ^ row[x] ) & ( 1 << y );  

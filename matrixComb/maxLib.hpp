@@ -18,18 +18,18 @@
 // screenM is outside of the class, because it doesn't work inside private/public. 
 // If you do put it in private/public and you run it, the Due will freeze.
 screen screenM[ MATRIX_AMOUNT ]; 
-
+ 
 
 /// Class that creates a display out of 4 max7219 led matrices.
 //
-/// This class controls multiple Max7219 led matrices to make them function as a single display.
+/// This class controls 4 Max7219 led matrices to make them function as a single display.
 /// An instance of this class creates an array of Screen objects to store data.
 /// You can then use the max7219 object as a window to draw on.
 //
-/// Data is altered wth the Clear function ( set all data to 0 ) or the setPixel function ( alter single pixel with X and Y values ).
+/// Data is altered wth the clear() function ( set all data to 0 ) or the setPixel() function ( alter single pixel with X and Y values ).
 /// After altering, the data is drawn on the displays with render().
 //
-/// Also has properties to request width & heigth with getHeight() and getWidth().s
+/// Also has functions to return width & heigth with getHeight() and getWidth().
 class max7219{
 private:
 	hwlib::spi_bus & bus;
@@ -41,7 +41,7 @@ public:
 	/// Constructor method
 	//
 	/// Constructor method for the Max7219 display object, which needs:
-	/// - SPI bus with parameters for <CLOCKPIN> and <DATAPIN>/
+	/// - SPI bus with parameters for clockpin and datapin.
 	/// - Latch pin.
 	/// - Amount of screens in width.
 	/// - Amount of screens in height.
@@ -69,15 +69,15 @@ public:
 		bus.transaction( sel ).write_and_read( 2, tmp, nullptr );
 		
 		tmp[0] = MAX7219_REG_BRIGHTNESS; 										// Brightness 3.
-		tmp[1] = 0x0F;
+		tmp[1] = MAX7219_REG_DISPLAYTESTT;
 		bus.transaction( sel ).write_and_read( 2, tmp, nullptr );
 		
-		tmp[0] = MAX7219_REG_SCAN_LIMIT; 										// Scan limiut -- use rows 0 to 7.
-		tmp[1] = 0x07;
+		tmp[0] = MAX7219_REG_SCAN_LIMIT; 										// Scan limit -- use rows 0 to 7.
+		tmp[1] = MAX7219_SCAN_LIMIT;
 		bus.transaction( sel ).write_and_read( 2, tmp, nullptr );
 		
 		tmp[0] = MAX7219_REG_SHUTDOWN; 											// Shutdown mode.
-		tmp[1] = 0x01;
+		tmp[1] = MAX7219_NORMAL_OPERATION;
 		bus.transaction( sel ).write_and_read( 2, tmp, nullptr );
 		
 		tmp[0] = MAX7219_REG_DISPLAYTEST; 										// Display test mode, all on for 0x01.
@@ -92,7 +92,7 @@ public:
 		}
 	}
 	
-	/// Transfer all data to chip to draw pixels.
+	/// Transfer data to chip to draw pixels.
 	//
 	/// Use this function after drawing to render the changes to the display.
 	/// Data array of 2 bytes are created, an address and value.

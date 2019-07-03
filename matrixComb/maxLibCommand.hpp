@@ -37,7 +37,7 @@ constexpr uint8_t MAX7219_COLUMN8				= 0x08;
 	
 /// Multi-purpose data: Send no data to a column, can be used for a NO-OP on certain.
 constexpr uint8_t MAX7219_NO_OP_DATA			= 0x00;
-/// The ammount of columns that can be adressed: 1 to 8 (0x00 to 0x007).
+/// The ammount of columns that can be adressed: 1 to 8 (0x00 to 0x07).
 constexpr uint8_t MAX7219_SCAN_LIMIT			= 0x07;
 /// Enable shutdown mode and display test.
 constexpr uint8_t MAX7219_NORMAL_OPERATION		= 0x01;
@@ -47,7 +47,7 @@ constexpr uint8_t BRIGHTNESS_LVL				= 0x05;
 /// The amount of matrices.
 constexpr uint8_t MATRIX_AMOUNT					= 4;
 /// The size of the matrices.
-constexpr uint8_t MATRIX_SIZE					= ( MATRIX_AMOUNT+MATRIX_AMOUNT );
+constexpr uint8_t MATRIX_SIZE					= ( MATRIX_AMOUNT + MATRIX_AMOUNT );
 
 constexpr uint8_t PIXELBUFFER					= 0x0;
 

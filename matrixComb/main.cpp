@@ -99,13 +99,6 @@ int main( void ){
 				//Confirm when you're done watching your score with switch 1.
 				while( sw1.read() ){}
 				
-				//Reset screen.
-				for( int i = 0; i < 8; i++ ){
-					for( int j = 0; j < 32; j++ ){
-						screens.setPixel( i, j, 0 );	
-					}   
-				}
-				
 				//reset score/objects.
 				g.resetPoints();
 				g.resetObj();
@@ -114,7 +107,7 @@ int main( void ){
 				obstacleMid.reset();
 				obstacleBot.reset();
 				
-				//If the ball touches the goal, it randomizes the obstacles.
+			//If the ball touches the goal, it randomizes the obstacles.
 			}else if( g.getLineRand() ){ 	
 				obstacleTop.randLine( 1 );
 				obstacleMid.randLine( 2 );
