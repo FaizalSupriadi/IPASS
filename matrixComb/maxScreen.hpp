@@ -13,8 +13,9 @@
 #ifndef MAXSCREEN_HPP
 #define MAXSCREEN_HPP
 
+/// \brief
 /// The screen class is used to store data for a single screen.
-//
+/// \details
 /// This class is used to store data for a single screen.
 /// This class consists of an array with 8 rows, each containing a byte.
 /// Each bit represents a led, with 1 as on and 0 as off.
@@ -32,8 +33,9 @@ private:
 
 public:
 	
+	/// \brief
 	/// Function to allow reading data from a row.
-	//
+	/// \details
 	/// This function returns a single row, ranging from 0 to 7.
 	/// This function needs to have input ranging from 0 to 7 to return the row, else it will return 0
 	uint8_t getRow( int n ){
@@ -42,8 +44,9 @@ public:
 		}return row[n];
 	}
 	
+	/// \brief
 	/// Function to allow setting data from a row.
-	//
+	/// \details
 	/// This function sets a row n with data.
 	/// This functions needs to have input ranging from 0 to 7 to set data, otherwise it will do nothing.
 	void setRow( int n, uint8_t data ){
@@ -53,8 +56,9 @@ public:
 		row[n] = data;
 	}
 	
+	/// \brief
 	/// Function to alter one bit.
-	//
+	/// \details
 	/// This function allows a single led to be toggled on or off by sending x and y coordinates and a value.
 	/// Only the concerning bit is changed, the rest of the data stays the same.
 	void setPixel( int x, int y, bool data ){

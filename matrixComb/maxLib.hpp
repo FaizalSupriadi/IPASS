@@ -19,9 +19,9 @@
 // If you do put it in private/public and you run it, the Due will freeze.
 screen screenM[ MATRIX_AMOUNT ]; 
  
-
+/// \brief
 /// Class that creates a display out of 4 max7219 led matrices.
-//
+/// \details
 /// This class controls 4 Max7219 led matrices to make them function as a single display.
 /// An instance of this class creates an array of Screen objects to store data.
 /// You can then use the max7219 object as a window to draw on.
@@ -38,8 +38,9 @@ private:
 	int height;
 
 public:
+	/// \brief
 	/// Constructor method
-	//
+	/// \details
 	/// Constructor method for the Max7219 display object, which needs:
 	/// - SPI bus with parameters for clockpin and datapin.
 	/// - Latch pin.
@@ -57,8 +58,9 @@ public:
 			screenM[i] = screen();
 		}
 	}
+	/// \brief
 	/// Function to clear all screen data to bits of 0.
-	//
+	/// \details
 	/// Initial values are set here. Also used to clear the screen data with all 0 bits.
 	/// Data is stored in tmp[2] array of 2 uint8_t( Bytes ).
 	/// First byte is for address.
@@ -92,8 +94,9 @@ public:
 		}
 	}
 	
+	/// \brief
 	/// Transfer data to chip to draw pixels.
-	//
+	/// \details
 	/// Use this function after drawing to render the changes to the display.
 	/// Data array of 2 bytes are created, an address and value.
 	/// The array is then pushed to the bus and drawn on display.
@@ -108,9 +111,9 @@ public:
 		}
 		
 	}
-	
+	/// \brief
 	/// Function to alter a single pixel on the display.
-	//
+	/// \details
 	/// This function asks X and Y values to change the corrseponding pixel on the display to a 1 or 0 ( true or false ).
 	/// The right display to draw on is automatically selected.
 	void setPixel( int x, int y, bool state){
@@ -122,13 +125,15 @@ public:
 		}
 		screenM[tmp].setPixel( x%8, y%8, state );
 	}
+	/// \brief
 	/// Height value of matrices.
-	//
+	/// \details
 	/// Return the height.
 	int getHeight(){ return height; }
 	
+	/// \brief
 	/// Width of matrices.
-	//
+	/// \details
 	/// Return the width.
 	int getWidth(){ return width; }
 	

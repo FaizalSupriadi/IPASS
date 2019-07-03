@@ -80,7 +80,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a285fdbbb7c29dcaa10634ac6756d7b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to clear all screen data to bits of 0.  <a href="#a285fdbbb7c29dcaa10634ac6756d7b49">More...</a><br /></td></tr>
 <tr class="separator:a285fdbbb7c29dcaa10634ac6756d7b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a878e515e5c2b3dc2e5e8a849cd328a21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmax7219.html#a878e515e5c2b3dc2e5e8a849cd328a21">render</a> ()</td></tr>
-<tr class="memdesc:a878e515e5c2b3dc2e5e8a849cd328a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfer all data to chip to draw pixels.  <a href="#a878e515e5c2b3dc2e5e8a849cd328a21">More...</a><br /></td></tr>
+<tr class="memdesc:a878e515e5c2b3dc2e5e8a849cd328a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfer data to chip to draw pixels.  <a href="#a878e515e5c2b3dc2e5e8a849cd328a21">More...</a><br /></td></tr>
 <tr class="separator:a878e515e5c2b3dc2e5e8a849cd328a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e4aa8eb81e73d65de5490898abee53f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmax7219.html#a1e4aa8eb81e73d65de5490898abee53f">setPixel</a> (int x, int y, bool state)</td></tr>
 <tr class="memdesc:a1e4aa8eb81e73d65de5490898abee53f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to alter a single pixel on the display.  <a href="#a1e4aa8eb81e73d65de5490898abee53f">More...</a><br /></td></tr>
@@ -94,7 +94,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that creates a display out of 4 <a class="el" href="classmax7219.html" title="Class that creates a display out of 4 max7219 led matrices. ">max7219</a> led matrices. </p>
-<p>This class controls multiple Max7219 led matrices to make them function as a single display. An instance of this class creates an array of Screen objects to store data. You can then use the <a class="el" href="classmax7219.html" title="Class that creates a display out of 4 max7219 led matrices. ">max7219</a> object as a window to draw on. Data is altered wth the Cleara function ( set all data to 0 ) or the setPixel function ( alter single pixel with X and Y values ). After altering, the data is drawn on the displays with <a class="el" href="classmax7219.html#a878e515e5c2b3dc2e5e8a849cd328a21" title="Transfer all data to chip to draw pixels. ">render()</a>. Also has properties to request width &amp; heigth with <a class="el" href="classmax7219.html#ad44fade192598c4c5cb1b8521d42b325" title="Height value of matrices. ">getHeight()</a> and <a class="el" href="classmax7219.html#af6abe3b1c33d6ee41cb33d86cc66d08d" title="Width of matrices. ">getWidth()</a>.s </p>
+<p>This class controls 4 Max7219 led matrices to make them function as a single display. An instance of this class creates an array of Screen objects to store data. You can then use the <a class="el" href="classmax7219.html" title="Class that creates a display out of 4 max7219 led matrices. ">max7219</a> object as a window to draw on. Data is altered wth the <a class="el" href="classmax7219.html#a285fdbbb7c29dcaa10634ac6756d7b49" title="Function to clear all screen data to bits of 0. ">clear()</a> function ( set all data to 0 ) or the <a class="el" href="classmax7219.html#a1e4aa8eb81e73d65de5490898abee53f" title="Function to alter a single pixel on the display. ">setPixel()</a> function ( alter single pixel with X and Y values ). After altering, the data is drawn on the displays with <a class="el" href="classmax7219.html#a878e515e5c2b3dc2e5e8a849cd328a21" title="Transfer data to chip to draw pixels. ">render()</a>. Also has functions to return width &amp; heigth with <a class="el" href="classmax7219.html#ad44fade192598c4c5cb1b8521d42b325" title="Height value of matrices. ">getHeight()</a> and <a class="el" href="classmax7219.html#af6abe3b1c33d6ee41cb33d86cc66d08d" title="Width of matrices. ">getWidth()</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6ff77cc7ff607aa9d0e14cd1c82b70c6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ff77cc7ff607aa9d0e14cd1c82b70c6">&#9670;&nbsp;</a></span>max7219()</h2>
@@ -144,7 +144,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Constructor method. </p>
 <p>Constructor method for the Max7219 display object, which needs:</p><ul>
-<li>SPI bus with parameters for &lt;CLOCKPIN&gt; and &lt;DATAPIN&gt;/</li>
+<li>SPI bus with parameters for clockpin and datapin.</li>
 <li>Latch pin.</li>
 <li>Amount of screens in width.</li>
 <li>Amount of screens in height. </li>
@@ -260,8 +260,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Transfer all data to chip to draw pixels. </p>
-<p>Use this function after drawing with setPixel/setRow/clear to render the changes to the display Data array of 2 bytes are created, an address and value. The array is then pushed to the bus and drawn on display. </p>
+<p>Transfer data to chip to draw pixels. </p>
+<p>Use this function after drawing to render the changes to the display. Data array of 2 bytes are created, an address and value. The array is then pushed to the bus and drawn on display. </p>
 
 </div>
 </div>
@@ -316,7 +316,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 2 2019 14:01:00 for &lt;project name&gt; by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 3 2019 22:12:54 for &lt;project name&gt; by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
